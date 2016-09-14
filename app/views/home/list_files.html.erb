@@ -1,0 +1,26 @@
+<h2>List of files in google drive</h2>
+
+<% imported_spreadsheet = false %>
+<% imported_document = false %>
+
+<div class="ui cards">
+  <% @files.each do |file| %>
+  <div class="card">
+    <div class="content">
+      <div class="header"><%= file.title %></div>
+      <div class="meta"><%= link_to "Link", file.human_url %></div>
+      <div class="description">
+        <%= file.resource_type %>
+        <% if file.resource_type.to_s == "spreadsheet" && !imported_spreadsheet%>
+          <%= file.export_as_string("text/csv") %>
+          <% imported_spreadsheet = true %>
+        <% end %>
+        <% if file.resource_type.to_s == "document" && !imported_document%>
+          <%= file.export_as_string("text/plain").inspect %>
+          <% imported_document = true %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

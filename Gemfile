@@ -33,6 +33,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 gem 'elm-rails', github: 'mariochavez/elm-rails', branch: 'rails5_with_sprockets'
 
+gem 'google_drive'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -15,7 +15,8 @@
 	        <%= image_tag("logo.png", class:'logo') %>
 	        Teste
 	      </a>
-	      <a href="#" class="item">Home</a>
+	      <%= link_to "Home",root_url, class: "item"%>
+        <%= link_to "List Drive Files", { action: "list_files", controller: "home"}, class: "item"%>
 	      <div class="ui simple dropdown item">
 	        Dropdown <i class="dropdown icon"></i>
 	        <div class="menu">
